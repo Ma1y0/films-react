@@ -9,14 +9,14 @@ require("dotenv").config()
 mongoose.connect(process.env.DB_URI)
 const db = mongoose.connection
 db.on("error", error => console.log(error))
-db.once("open", () => console.log("Connected to MongoDb"))
+db.once("open", () => console.log("Connected to MongoDB"))
 
 //Middleware
 app.use(cors())
 app.use(express.json())
 
 //Router
-app.use("/films", directorRoter)
+app.use("/directors", directorRoter)
 
 app.listen(process.env.PORT, () => {
     console.log(`Serer is listenig on port ${process.env.PORT}`)

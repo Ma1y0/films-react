@@ -76,9 +76,13 @@ router.delete("/:id", async (req, res) => {
             res.json("Add ID")
         }
         
-        const director = await Director.findByIdAndDelete()
+        const director = await Director.findByIdAndDelete(id)
+
+        res.json({
+            message: "you deleted a director"
+        })
     } catch (error) {
-        
+        res.json(error)
     }
 })
 

@@ -3,3 +3,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input {
+    text-align:center;
+}
+
+.grid-list {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+}
